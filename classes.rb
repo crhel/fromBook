@@ -1,49 +1,61 @@
 # frozen_string_literal: true
 
 class Dog
-  def talk(name)
-    puts "#{name} says Bark"
+  def make_up_name
+    @name = "Sandy"
   end
 
-  def move(name, destination)
-    puts "#{name} runs to the #{destination}"
+  def talk
+    puts "#{@name} says Bark"
+  end
+
+  def move(destination)
+    puts "#{@name} runs to the #{destination}"
   end
 end
 
 class Cat
-  def talk(name)
-    puts "#{name} says Meow"
+  def make_up_name
+    @name = "Lucy"
   end
 
-  def move(name, destination)
-    puts "#{name} runs to the #{destination}"
+  def talk
+    puts "#{@name} says Meow"
+  end
+
+  def move(destination)
+    puts "#{@name} runs to the #{destination}"
   end
 end
 
 class Bird
-  def talk(name)
-    puts "#{name} says Chirp! Chirp!"
+  def make_up_name
+    @name = "Chiki"
   end
 
-  def move(name, destination)
-    puts "#{name} flies to the #{destination}"
+  def talk
+    puts "#{@name} says Chirp! Chirp!"
+  end
+
+  def move(destination)
+    puts "#{@name} flies to the #{destination}"
   end
 end
 
 dog = Dog.new
-dog_name = "Rex"
-dog.talk(dog_name)
-dog.move(dog_name, "fence")
+dog.make_up_name
+dog.talk
+dog.move("fence")
 
 cat = Cat.new
-cat_name = "Lucy"
-cat.talk(cat_name)
-cat.move(cat_name, "litter box")
+cat.make_up_name
+cat.talk
+cat.move("litter box")
 
 bird = Bird.new
-bird_name = "Chiki"
-bird.talk(bird_name)
-bird.move(bird_name, "feeder")
+bird.make_up_name
+bird.talk
+bird.move("feeder")
 
 # class Blender
 #   def close_lid
