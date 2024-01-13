@@ -1,13 +1,7 @@
 # frozen_string_literal: true
 
 class Dog
-  def make_up_name
-    @name = "Sandy"
-  end
-
-  def make_up_age
-    @age = 5
-  end
+  attr_accessor :name, :age
 
   def talk
     puts "#{@name} says Bark"
@@ -23,13 +17,7 @@ class Dog
 end
 
 class Cat
-  def make_up_name
-    @name = "Lucy"
-  end
-
-  def make_up_age
-    @age = 2
-  end
+  attr_accessor :name, :age
 
   def talk
     puts "#{@name} says Meow"
@@ -45,13 +33,7 @@ class Cat
 end
 
 class Bird
-  def make_up_name
-    @name = "Chiki"
-  end
-
-  def make_up_age
-    @age = 4
-  end
+  attr_accessor :name, :age
 
   def talk
     puts "#{@name} says Chirp! Chirp!"
@@ -67,22 +49,22 @@ class Bird
 end
 
 dog = Dog.new
-dog.make_up_name
-dog.make_up_age
+dog.name = "Bichi"
+dog.age = 5
 dog.talk
 dog.report_age
 dog.move("fence")
 
 cat = Cat.new
-cat.make_up_name
-cat.make_up_age
+cat.name = "Lucy"
+cat.age = 2
 cat.talk
 cat.report_age
 cat.move("litter box")
 
 bird = Bird.new
-bird.make_up_name
-bird.make_up_age
+bird.name = "Birdi"
+bird.age = 3
 bird.talk
 bird.report_age
 bird.move("feeder")
