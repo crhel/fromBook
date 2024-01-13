@@ -1,7 +1,19 @@
 # frozen_string_literal: true
 
 class Dog
-  attr_accessor :name, :age
+  attr_reader :name, :age
+
+  def name=(new_name)
+    raise "Name can't be blank!" if new_name == ""
+
+    @name = new_name
+  end
+
+  def age=(new_age)
+    raise "Age #{new_age} isn't valid!" if new_age.negative?
+
+    @age = new_age
+  end
 
   def talk
     puts "#{@name} says Bark"
@@ -49,8 +61,8 @@ class Bird
 end
 
 dog = Dog.new
-dog.name = "Bichi"
-dog.age = 5
+# dog.name = ""
+dog.age = -1
 dog.talk
 dog.report_age
 dog.move("fence")
