@@ -16,7 +16,7 @@ class Vehicle
   end
 
   def mileage
-    @odometr / @gas_used
+    @odometer / @gas_used
   end
 end
 
@@ -28,3 +28,9 @@ end
 
 class Motorcycle < Vehicle
 end
+
+car = Car.new
+car.sound_horn
+car.gas_used = 366
+car.odometer = 11_432
+puts car.mileage
