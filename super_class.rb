@@ -19,3 +19,12 @@ class Vehicle
     @odometr / @gas_used
   end
 end
+
+class Car < Vehicle
+end
+
+class Truck < Vehicle
+end
+
+class Motorcycle < Vehicle
+end
