@@ -18,25 +18,28 @@ class Animal
   def report_age
     puts "#{@name} is #{@age} years old"
   end
+
+  def move(destination)
+    puts "#{@name} runs to the #{destination}"
+  end
+end
+
+class Armadillo < Animal
+  def move(destination)
+    puts "#{@name} unrolls!"
+    super
+  end
 end
 
 class Dog < Animal
   def talk
     puts "#{@name} says Bark"
   end
-
-  def move(destination)
-    puts "#{@name} runs to the #{destination}"
-  end
 end
 
 class Cat < Animal
   def talk
     puts "#{@name} says Meow"
-  end
-
-  def move(destination)
-    puts "#{@name} runs to the #{destination}"
   end
 end
 
@@ -50,23 +53,29 @@ class Bird < Animal
   end
 end
 
-dog = Dog.new
-dog.name = "Rex"
-dog.age = 10
-dog.talk
-dog.report_age
-dog.move("fence")
+arma = Armadillo.new
+arma.age = 12
+arma.name = "Siki"
+arma.report_age
+arma.move("fence")
 
-cat = Cat.new
-cat.name = "Lucy"
-cat.age = 2
-cat.talk
-cat.report_age
-cat.move("litter box")
+# dog = Dog.new
+# dog.name = "Rex"
+# dog.age = 10
+# dog.talk
+# dog.report_age
+# dog.move("fence")
 
-bird = Bird.new
-bird.name = "Birdi"
-bird.age = 3
-bird.talk
-bird.report_age
-bird.move("feeder")
+# cat = Cat.new
+# cat.name = "Lucy"
+# cat.age = 2
+# cat.talk
+# cat.report_age
+# cat.move("litter box")
+
+# bird = Bird.new
+# bird.name = "Birdi"
+# bird.age = 3
+# bird.talk
+# bird.report_age
+# bird.move("feeder")
