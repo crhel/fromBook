@@ -33,6 +33,9 @@ class Truck < Vehicle
 end
 
 class Motorcycle < Vehicle
+  def steer
+    puts "Turn front wheel"
+  end
 end
 
 car = Car.new
@@ -44,3 +47,7 @@ puts car.mileage
 truck = Truck.new
 truck.load_bed("300 bouncy balls")
 puts "Truck is carrying #{truck.cargo}"
+
+mot = Motorcycle.new
+car.steer
+mot.steer
