@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Dog
+class Animal
   attr_reader :name, :age
 
   def name=(new_name)
@@ -15,6 +15,12 @@ class Dog
     @age = new_age
   end
 
+  def report_age
+    puts "#{@name} is #{@age} years old"
+  end
+end
+
+class Dog < Animal
   def talk
     puts "#{@name} says Bark"
   end
@@ -22,15 +28,9 @@ class Dog
   def move(destination)
     puts "#{@name} runs to the #{destination}"
   end
-
-  def report_age
-    puts "#{@name} is #{@age} years old"
-  end
 end
 
-class Cat
-  attr_accessor :name, :age
-
+class Cat < Animal
   def talk
     puts "#{@name} says Meow"
   end
@@ -38,15 +38,9 @@ class Cat
   def move(destination)
     puts "#{@name} runs to the #{destination}"
   end
-
-  def report_age
-    puts "#{@name} is #{@age} years old"
-  end
 end
 
-class Bird
-  attr_accessor :name, :age
-
+class Bird < Animal
   def talk
     puts "#{@name} says Chirp! Chirp!"
   end
@@ -54,15 +48,11 @@ class Bird
   def move(destination)
     puts "#{@name} flies to the #{destination}"
   end
-
-  def report_age
-    puts "#{@name} is #{@age} years old"
-  end
 end
 
 dog = Dog.new
-# dog.name = ""
-dog.age = -1
+dog.name = "Rex"
+dog.age = 10
 dog.talk
 dog.report_age
 dog.move("fence")
@@ -80,17 +70,3 @@ bird.age = 3
 bird.talk
 bird.report_age
 bird.move("feeder")
-
-# class Blender
-#   def close_lid
-#     puts "Sealed tight!"
-#   end
-
-#   def blend(speed)
-#     puts "Spinning on #{speed} setting."
-#   end
-# end
-
-# blender = Blender.new
-# blender.blend("high")
-# blender.close_lid
