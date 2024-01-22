@@ -3,6 +3,11 @@
 class Employee
   attr_reader :name, :salary
 
+  def initialize(new_name = "Noname", new_salary = 0.0)
+    @salary = new_salary
+    @name = new_name
+  end
+
   def name=(new_name)
     raise "Name can't be blank!" if new_name == ""
 
@@ -22,7 +27,7 @@ class Employee
   end
 end
 
-emp = Employee.new
-emp.name = "Ammy"
-emp.salary = 5000
+emp = Employee.new("Ammy")
+# emp.name = "Ammy"
+# emp.salary = 5000
 emp.print_pay_stub
